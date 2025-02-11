@@ -1,0 +1,573 @@
+/* Importación de fuentes */
+@import url(https://db.onlinewebfonts.com/c/ed53d037d5c835394b1f1150a8158ab2?family=Fontesque);
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* Variables de la paleta de colores estilo Talavera */
+:root {
+    --primary-color: #303162; /* Azul oscuro */
+    --secondary-color: #FF7203; /* Naranja */
+    --text-color: #61200f; /* Marrón */
+    --button-color: #7caaf0; /* Azul claro */
+    --white-color: #ffffff; /* Blanco */
+    --footer-color: #ffa93a; /* Amarillo cálido */
+    --optional: #3e8672; /* Verde */
+    --background-gradient: radial-gradient(circle, #ffa93a 0%, #7caaf0 100%);
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Fontesque', sans-serif;
+    color: var(--text-color);
+    background: var(--background-gradient);
+    background-size: cover;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    padding-top: 80px;
+}
+
+/* Estilos para el navbar */
+.navbar {
+    background-color: var(--primary-color) !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.navbar-brand img {
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+.nav-link {
+    color: var(--white-color) !important;
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+    align-items: center;
+}
+.nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+/* Estilos para la lista de navegación */
+.navbar-nav {
+    gap: 40px; /* Espacio entre los elementos */
+}
+#theme-toggle {
+    margin-left: 10px; /* Ajusta según sea necesario */
+}
+/* Ajuste general para el menú y dark mode toggle */
+.menu-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+#theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.navbar-toggler {
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+/* Home */
+h1 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+span {
+    color: var(--secondary-color);
+}
+p {
+    font-size: 2.5rem;
+    text-align: justify;
+}
+.btn-primary {
+    background-color: var(--button-color);
+    border: none;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+}
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+/* Quienes somos */
+h2 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+}
+h5 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+p .card-text {
+    font-size: 14px;
+    text-align: justify;
+    color: var(--text-color);
+}
+strong {
+    color: var(--optional);
+}
+/* Estilos para las tarjetas */
+.custom-card {
+    border: none; /* Elimina el borde predeterminado */
+    border-radius: 15px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que el contenido no sobresalga */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efecto hover */
+    background-color: var(--white-color); /* Fondo blanco */
+}
+.custom-card:hover {
+    transform: translateY(-10px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+/* Contenedor de la imagen */
+.custom-img-container {
+    width: 100%;
+    height: 200px; /* Altura fija para la imagen */
+    overflow: hidden; /* Asegura que la imagen no sobresalga */
+}
+.custom-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionarla */
+}
+/* Cuerpo de la tarjeta */
+.card-body {
+    padding: 20px; /* Espaciado interno */
+    background-color: var(--white-color); /* Fondo verde */
+    color: var(--text-color); /* Texto blanco */
+}
+/* Título de la tarjeta */
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--white-color); /* Texto blanco */
+}
+/* Texto de la tarjeta */
+.card-text {
+    font-size: 1.3rem;
+    color: var(--text-color); /* Texto blanco */
+}
+/* Estilos para el texto de las cards */
+.custom-card .card-text {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+    line-height: 1.4; /* Altura de línea para mejor legibilidad */
+}
+
+/* Estilos para el carrusel */
+#carouselExampleAutoplay {
+    width: 600px; /* Ancho fijo del carrusel */
+    height: 600px; /* Altura fija del carrusel */
+    margin: 0 auto; /* Centrar el carrusel horizontalmente */
+    position: relative; /* Necesario para posicionar los controles */
+    overflow: hidden; /* Asegura que el contenido no sobresalga */
+    border-radius: 100px 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+/* Estilos para las imágenes del carrusel */
+.carousel-inner {
+    width: 100%;
+    height: 100%;
+}
+.carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionarla */
+}
+/* Estilos para los controles del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 50px; /* Ancho de los controles */
+    height: 50px; /* Altura de los controles */
+    background-color: var(--primary-color); /* Fondo semitransparente */
+    border-radius: 50%; /* Forma circular */
+    top: 50%; /* Centrar verticalmente */
+    transform: translateY(-50%); /* Ajuste fino para centrar */
+    transition: opacity 0.3s ease; /* Transición suave */
+}
+.carousel-control-prev {
+    left: -70px; /* Posición fuera del carrusel (izquierda) */
+}
+.carousel-control-next {
+    right: -70px; /* Posición fuera del carrusel (derecha) */
+}
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1; /* Eliminar transparencia al hacer hover */
+}
+/* Estilos para los íconos de los controles */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1); /* Invertir el color de los íconos (blanco) */
+}
+/* Texto del carrusel */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+}
+.carousel-caption h3 {
+    font-size: 2rem; /* Tamaño del título */
+    color: var(--white-color); /* Color del texto */
+}
+.carousel-caption p {
+    font-size: 1.2rem; /* Tamaño del texto */
+    color: var(--white-color); /* Color del texto */
+    text-align: center; /* Alinear al centro */
+}
+
+/* NUestros Servicios */
+/* Estilos para las tarjetas */
+.custom-card {
+    position: relative;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: var(--white-color); /* Fondo blanco */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* Estilos para el contenido de las tarjetas */
+.card-header {
+    padding: 20px;
+}
+.card-body {
+    padding: 20px;
+    
+}
+.card-title {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+.card-text {
+    font-size: 1.8rem;
+    color: var(--text-color);
+    text-align: center;
+}
+.text-start li {
+    list-style: none;
+    text-align: center;
+    font-size: 1.5rem;
+}
+.list-group {
+    margin-top: 10px;
+}
+.list-group-item {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+}
+/* Imágenes dentro de las tarjetas */
+.card-img-bottom {
+    width: 100%; /* Ocupa el 100% del ancho del contenedor */
+    height: 160px; /* Altura fija de 160px */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin distorsionarla */
+    border-radius: 0 0 20px 20px; /* Bordes redondeados solo en la parte inferior */
+}
+
+/* Contacto */
+/* Estilos para la sección de contacto */
+#contacto {
+    padding: 60px 0;
+    background-color: var(--background-gradient);
+}
+#contacto h2 {
+    color: var(--primary-color);
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+#contacto .card {
+    border: none;
+    border-radius: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#contacto .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+#contacto .card-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+#contacto .card-body p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    text-align: center;
+    flex: 1; /* Hace que el cuerpo de la card ocupe el espacio restante */
+}
+#contacto iframe {
+    border: none;
+    border-radius: 15px;
+    height: 267px;
+}
+/* Estilos para el botón de Google Maps */
+.btn-primary {
+    background-color: var(--button-color); /* Color del botón */
+    border: none; /* Eliminar borde */
+    color: var(--white-color); /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 1.5rem; /* Tamaño de la fuente */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+.btn-primary:hover {
+    background-color: var(--secondary-color); /* Color de hover */
+    color: var(--white-color); /* Color del texto en hover */
+}
+/* Estilos para el botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366; /* Color verde de WhatsApp */
+    color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #128c7e; /* Color verde oscuro al hacer hover */
+}
+.whatsapp-icon {
+    font-size: 1.8rem;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: var(--primary-color); /* Mismo color que la navbar */
+    height: 100px; /* Altura fija de 100px */
+    width: 100%; /* Ancho completo */
+    text-align: center;
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido */
+    padding: 0 20px; /* Espaciado horizontal */
+}
+.footer p {
+    color: var(--white-color); /* Texto en color blanco */
+    font-size: 1.5rem; /* Tamaño del texto */
+    margin: 0; /* Elimina el margen predeterminado */
+    flex-grow: 1; /* Hace que el texto ocupe el espacio restante */
+    text-align: center; /* Centra el texto horizontalmente */
+}
+.footer a {
+    color: var(--white-color); /* Color del ícono */
+}
+/* Estilos para el ícono de flecha hacia arriba */
+.footer a i.bi-arrow-up {
+    font-size: 3rem; /* Tamaño del ícono */
+    font-weight:bolder; /* Hacer el ícono más grueso */
+    transition: color 0.3s ease; /* Transición suave para el hover */
+}
+/* Efecto hover para el ícono de flecha */
+.footer a:hover i.bi-arrow-up {
+    color: var(--secondary-color); /* Cambiar color al hacer hover */
+}
+
+/* Ajuste para contenedores en móviles */
+
+/* Ajuste para los carouseles */
+.carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background: var(--primary-color);
+    color: var(--white-color);
+}
+.dark-mode .navbar {
+    background-color: var(--text-color) !important;
+}
+.dark-mode .nav-link {
+    color: var(--white-color) !important;
+}
+.dark-mode .nav-link:hover {
+    color: var(--secondary-color) !important;
+}
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h5,
+.dark-mode .card-title {
+    color: var(--white-color);
+}
+.dark-mode p,
+.dark-mode .card-text {
+    color: var(--white-color);
+}
+.dark-mode .custom-card {
+    background-color: var(--text-color);
+    color: var(--white-color);
+}
+.dark-mode .card-body {
+    background-color: var(--text-color);
+    color: var(--white-color);
+}
+/* Modo oscuro: Cambiar el color de los controles a blanco */
+body.dark-mode .carousel-control-prev,
+body.dark-mode .carousel-control-next {
+    background-color: var(--white-color); /* Fondo blanco en modo oscuro */
+}
+body.dark-mode .carousel-control-prev-icon,
+body.dark-mode .carousel-control-next-icon {
+    filter: invert(0); /* Restaurar el color original de los íconos (negro) */
+}
+.dark-mode .footer {
+    background-color: var(--text-color);
+}
+/* Estilos específicos para la sección de contacto en modo oscuro */
+.dark-mode #contacto h5,
+.dark-mode #contacto p {
+    color: var(--white-color) !important;
+}
+
+/* Responsividad para móvil pequeño: 360 x 640 px */
+@media (max-width: 360px) {
+    /* Estilos para el icono de dark mode */
+    h1 {
+        font-size: 2.2rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.3rem;
+    }
+    .carousel {
+        height: 350px;
+    }
+    .footer p {
+        font-size: 1rem;
+    }
+}
+
+/* Responsividad para móvil medio: 375 x 667 px */
+@media (min-width: 361px) and (max-width: 375px) {
+    /* Estilos para el icono de dark mode */
+    h1 {
+        font-size: 2.3rem;
+    }
+    h2 {
+        font-size: 2.1rem;
+    }
+    p {
+        font-size: 1.4rem;
+    }
+    .carousel {
+        height: 300px;
+    }
+    .carousel-caption h3 {
+        font-size: 1.3rem;
+    }
+}
+/* Responsividad para smartphone grande: 720 x 1280 px */
+@media (min-width: 376px) and (max-width: 720px) {
+    /* Estilos para el icono de dark mode */
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    .carousel {
+        height: 400px;
+    }
+}
+/* Responsividad para ordenador portátil medio: 1366 x 768 px */
+@media (min-width: 721px) and (max-width: 1366px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+    p {
+        font-size: 1.6rem;
+    }
+    .carousel {
+        height: 600px;
+    }
+}
+/* Responsividad para ordenador de escritorio medio: 1440 x 900 px */
+@media (min-width: 1367px) and (max-width: 1440px) {
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    p {
+        font-size: 1.8rem;
+    }
+    .carousel {
+        height: 700px;
+    }
+    .carousel-caption h3 {
+        font-size: 2rem;
+    }
+    .carousel-caption p {
+        font-size: 1.3rem;
+    }
+    .footer p {
+        font-size: 1.3rem;
+    }
+}
+/* Responsividad para PC de escritorio grande: 1920 x 1080 px */
+@media (min-width: 1441px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 3rem;
+    }
+    p {
+        font-size: 2rem;
+    }
+    .carousel {
+        height: 800px;
+    }
+}
